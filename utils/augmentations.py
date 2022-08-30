@@ -33,7 +33,8 @@ class Albumentations:
                 A.VerticalFlip(p=0.5),
                 A.Rotate(limit=[-0.15, 0.15]),
                 A.CLAHE(p=0.5), 
-                CopyPaste(blend=True, sigma=1, pct_objects_paste=0.5, p=1), ]  # transforms
+                CopyPaste(blend=True, sigma=1, pct_objects_paste=0.5, p=1), 
+            ]  # transforms
             self.transform = A.Compose(T, bbox_params=A.BboxParams(format='yolo', label_fields=['class_labels']))
 
             LOGGER.info(prefix + ', '.join(f'{x}'.replace('always_apply=False, ', '') for x in T if x.p))
