@@ -26,14 +26,12 @@ class Albumentations:
         try:
             import albumentations as A
             check_version(A.__version__, '1.0.3', hard=True)  # version requirement
-            from copy_paste import CopyPaste
 
             T = [
                 A.HorizontalFlip(p=0.5),
                 A.VerticalFlip(p=0.5),
                 A.Rotate(limit=[-0.15, 0.15]),
                 A.CLAHE(p=0.5), 
-                CopyPaste(blend=True, sigma=1, pct_objects_paste=0.5, p=1), 
             ]  # transforms
             self.transform = A.Compose(T, bbox_params=A.BboxParams(format='yolo', label_fields=['class_labels']))
 
