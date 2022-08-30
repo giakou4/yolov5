@@ -29,7 +29,7 @@ class Albumentations:
 
             T = [
                 A.HorizontalFlip(p=0.5),
-                A.VerticalFlip(p=0.5),
+                A.VerticalFlip(p=0.1),
                 A.Rotate(limit=[-0.15, 0.15]),
                 A.CLAHE(p=0.5), 
                 #A.ColorJitter(p=0.5),
