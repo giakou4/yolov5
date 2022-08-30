@@ -30,7 +30,8 @@ class Albumentations:
             T = [
                 A.HorizontalFlip(p=0.5),
                 A.VerticalFlip(p=0.5),
-                A.Rotate(limit=[-0.15, 0.15]),]  # transforms
+                A.Rotate(limit=[-0.15, 0.15]),
+                A.CLAHE(p=0.5), ]  # transforms
             self.transform = A.Compose(T, bbox_params=A.BboxParams(format='yolo', label_fields=['class_labels']))
 
             LOGGER.info(prefix + ', '.join(f'{x}'.replace('always_apply=False, ', '') for x in T if x.p))
