@@ -32,8 +32,8 @@ class Albumentations:
                 A.VerticalFlip(p=0.1),
                 A.Rotate(limit=[-0.15, 0.15]),
                 #A.CLAHE(p=0.5), 
-                A.ColorJitter(p=0.5),
-                #A.HueSaturationValue(p=0.5),
+                #A.ColorJitter(p=0.5),
+                A.HueSaturationValue(p=0.5),
                 #A.RandomBrightness(p=0.2),
                 #A.RandomContrast(p=0.2),
             ]  # transforms
